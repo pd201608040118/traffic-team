@@ -22,7 +22,7 @@
           Schoolid: "201608040118",
           SchoolName: "中原工学院",
           adminname: "庞棣",
-          Tel: "1",
+          Tel: "2",
         }],
       }
     },

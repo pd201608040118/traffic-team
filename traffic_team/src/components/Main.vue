@@ -9,7 +9,7 @@
                text-color="#fff"
                active-text-color="#ffd04b">
         <el-menu-item index="1">
-          <router-link :to="{name:'text'}">关于联盟</router-link>
+          <router-link :to="{name:'success1'}">关于联盟</router-link>
         </el-menu-item>
         <el-submenu index="2">
           <template slot="title">教育研究中心</template>
@@ -31,12 +31,10 @@
             <router-link :to="{name:'aloin'}">管理登录</router-link>
           </el-menu-item>
         </el-submenu>
-
       </el-menu>
     </el-header>
     <el-main>
-      <!--<router-view></router-view>-->
-      <h1>河南省高校交通教育联盟</h1>>
+      <router-view></router-view>
     </el-main>
   </el-container>
 </template>
@@ -62,7 +60,7 @@
     background-color: #E9EEF3;
     color: #333;
     text-align: center;
-    line-height: 530px;
+    line-height: 100px;
   }
 
   body > .el-container {
@@ -71,10 +69,10 @@
 
   .el-container:nth-child(5) .el-aside,
   .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
+    line-height: 40px;
   }
 
   .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
+    line-height: 40px;
   }
 </style>

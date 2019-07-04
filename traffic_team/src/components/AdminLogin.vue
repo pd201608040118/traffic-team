@@ -70,10 +70,8 @@
 </script>
 
 <style>
-  .aloin {
-    width: 300px;
-    margin: 10% auto;
+.aloin {
+    width: 1000px;
+    margin: 5% auto;
   }
-
-
 </style>

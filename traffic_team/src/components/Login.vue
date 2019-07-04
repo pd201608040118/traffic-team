@@ -57,9 +57,11 @@
           url: 'http://localhost:9527/traffic/student/login?stuid=' + this.stuId + '&password=' + this.password,
         }).then(response => {
           const data = response.data;
-          this.stuName = data['stuName'];
+          this.stuName = data['stuId'];
           console.log(data['stuName']);
           if (this.stuName != null) {
+/*            sessionStorage.setItem("setname",response.data().res.stuName);
+            this.$store.dispatch("username",response.data().res.stuName);*/
             const {$router} = this;
             $router.push({name: "user"});
           }
@@ -78,8 +80,7 @@
 
 <style>
   .login {
-    width: 300px;
-    margin: 10% auto;
+    width: 1400px;
   }
 
 </style>

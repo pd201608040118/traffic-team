@@ -1,40 +1,55 @@
 <template>
-  <div class="text1">
-    <h1 style="text-align:center">搜索</h1>
-    <div class="input-wrap">
-      学校名称:<input type="text" v-model="author"/>
-      <span v-if="error.name" class="err-msg">{{error.name}}</span>
-    </div>
-    <div class="input-wrap">
-      <button @click="findcontent">查找</button>
-    </div>
-  </div>
+  <el-form label-width="80px">
+    <el-form-item label="账号">
+      <el-input v-model="schoolid"></el-input>
+    </el-form-item>
+    <el-form-item label="旧密码">
+      <el-input type="password" v-model="password1"></el-input>
+    </el-form-item>
+    <el-form-item label="新密码">
+      <el-input type="password" v-model="password2"></el-input>
+    </el-form-item>
+    <el-form-item label="联系方式">
+      <el-input v-model="tel"></el-input>
+    </el-form-item>
+    <el-form-item label="姓名">
+      <el-input v-model="adminname"></el-input>
+    </el-form-item>
+    <el-form-item>
+      <el-button type="primary" @click="onSubmit">立即修改</el-button>
+      <el-button>取消</el-button>
+    </el-form-item>
+  </el-form>
 </template>
 <script>
-
   export default {
     data() {
       return {
-        author: '',
-        error: {
-          name: '',
-        }
+        tel: '',
+        adminname: '',
+        schoolid: '',
+        password1:"",
+        password2:'',
       }
     },
-    methods:{
-      findcontent() {
+    methods: {
+      onSubmit() {
         this.$http({
           method: 'get',
-          url: 'http://localhost:9527/traffic/student/selectinfor?author=' + this.author,
+          url: 'http://localhost:9527/traffic/admin/alteradmin?tel=' + this.tel + '&adminname=' + this.adminname + '&schoolid=' + this.schoolid+'&password1='+this.password1+'&password2='+this.password2,
         }).then(response => {
           const data = response.data;
           console.log(data);
-         /*接收返回的list集合,并显示*/
+          if (data == 0 || data == -1) {
+            const {$router} = this;
+            $router.push({name: 'defeat1'})
+          }
+          else {
+            const {$router} = this;
+            $router.push({name: 'x1'})
+          }
         })
-      },
+      }
     }
   }
 </script>
-<style>
-
-</style>
