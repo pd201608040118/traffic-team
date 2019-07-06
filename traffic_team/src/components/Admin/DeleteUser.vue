@@ -1,10 +1,10 @@
-<template xmlns="">
+<template>
   <el-form label-width="80px">
     <el-form-item label="姓名">
-      <el-input v-model="stuname"></el-input>
+      <el-input v-model="stuName"></el-input>
     </el-form-item>
     <el-form-item label="学校">
-      <el-input v-model="school"></el-input>
+      <el-input v-model="School"></el-input>
     </el-form-item>
     <el-form-item>
       <el-button type="primary" @click="onSubmit">立即删除</el-button>
@@ -16,20 +16,20 @@
   export default {
     data() {
       return {
-        stuname: '',
-        school: '',
+        stuName: '',
+        School: '',
       }
     },
     methods: {
       onSubmit() {
         this.$http({
           method: 'get',
-          url: 'http://localhost:9527/traffic/admin/deletestudent?stuname=' + this.stuname+'&school='+this.school,
+          url: 'http://localhost:9527/traffic/admin/deletestudent?stuName=' + this.stuName + '&School=' + this.School,
         }).then(response => {
           const data = response.data;
           console.log(data);
           const {$router} = this;
-          $router.push({name: 'success1'})
+          $router.push({name: 'ausercontrol'})
         })
       }
     }

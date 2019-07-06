@@ -1,29 +1,76 @@
 <template>
   <el-container>
-    <el-header>河南省高校交通教育联盟</el-header>
+    <el-header>
+      <el-menu
+        class="el-menu-demo"
+        mode="horizontal"
+        @select="handleSelect"
+        background-color="#4a4c4f"
+        text-color="#fff"
+        active-text-color="#ffd04b">
+        <el-menu-item index="1">关于联盟</el-menu-item>
+        <el-submenu index="2">
+          <template slot="title">教育研究中心</template>
+          <el-menu-item index="2-1">组织机构</el-menu-item>
+          <el-menu-item index="2-2">师资力量</el-menu-item>
+        </el-submenu>
+        <el-submenu index="3">
+          <template slot="title">专业委员会</template>
+          <el-menu-item index="3-1">入会资格</el-menu-item>
+          <el-menu-item index="3-2">评判标准</el-menu-item>
+        </el-submenu>
+        <el-menu-item index="4">最新动态</el-menu-item>
+      </el-menu>
+    </el-header>
     <el-container>
-      <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-        <el-menu :default-openeds="['1', '4']">
+      <el-aside width="200px">
+        <el-radio-group v-model="isCollapse">
+          <el-radio-button :label="false">展开</el-radio-button>
+          <el-radio-button :label="true">收起</el-radio-button>
+        </el-radio-group>
+        <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
           <el-submenu index="1">
-            <template slot="title"><i class="el-icon-menu"></i>功能</template>
-            <el-menu-item index="1-1">
-              <router-link :to="{name:'a2'}">个人信息</router-link>
-            </el-menu-item>
-            <el-menu-item index="1-2">
-              <router-link :to="{name:'a3'}">用户管理</router-link>
-            </el-menu-item>
-            <el-submenu index="1-3">
-              <template slot="title">文件管理</template>
-              <el-menu-item index="1-3-1">
-                <router-link :to="{name:'a4'}">上传文件</router-link>
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span slot="title">个人信息管理</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="1-1">
+                <router-link :to="{name:'a_pim'}">个人信息</router-link>
               </el-menu-item>
-              <el-menu-item index="1-3-2">
-                <router-link :to="{name:'a5'}">查找文件</router-link>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="2">
+            <template slot="title">
+              <i class="el-icon-menu"></i>
+              <span slot="title">用户管理</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="2-1">
+                <router-link :to="{name:'ausercontrol'}">用户管理</router-link>
               </el-menu-item>
-            </el-submenu>
-            <el-menu-item index="1-4">
-              <router-link :to="{name:'a6'}">请求和帮助</router-link>
-            </el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="3">
+            <template slot="title">
+              <i class="el-icon-document"></i>
+              <span slot="title">文件管理</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="3-1"><router-link :to="{name:'uploadinfor'}">上传文件</router-link></el-menu-item>
+              <el-menu-item index="3-2"><router-link :to="{name:'findinfor'}">查找文件</router-link></el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="4">
+            <template slot="title">
+              <i class="el-icon-setting"></i>
+              <span slot="title">设置</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="4-1">
+                <router-link :to="{name:'helpyou'}">请求和帮助</router-link>
+              </el-menu-item>
+            </el-menu-item-group>
           </el-submenu>
         </el-menu>
       </el-aside>
@@ -37,6 +84,7 @@
   export default {
     data() {
       return {
+        isCollapse: true,
         error: {
           name: '',
         }
@@ -48,46 +96,26 @@
   .el-header, .el-footer {
     background-color: #B3C0D1;
     color: #333;
-    text-align: center;
     line-height: 100px;
-  }
-
-  .el-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 300px;
   }
 
   .el-main {
-    background-color: #E9EEF3;
+    background: url("/static/img/p2.jpg") no-repeat;
+    height: 600px;
+    width: 100%;
+    text-align: center;
+    background-size: cover;
+  }
+
+  .el-aside {
+    background-color: #4a4c4f;
     color: #333;
     text-align: center;
-    line-height: 100px;
+    line-height: 200px;
   }
 
-  body > .el-container {
-    margin-bottom: 40px;
-  }
-
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  }
-
-  .el-container:nth-child(7) .el-aside {
-    line-height: 260px;
-  }
-
-  .el-container:nth-child(8) .el-aside {
-    line-height: 260px;
-  }
-
-  .el-container:nth-child(9) .el-aside {
-    line-height: 260px;
-  }
-
-  .el-container:nth-child(7) .el-aside {
-    line-height: 260px;
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
   }
 </style>
