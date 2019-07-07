@@ -25,7 +25,7 @@
           const data = response.data;
           console.log(data);
           const {$router} = this;
-          $router.push({name: 'success1'})
+          $router.push({name: 'findinfor'})
         })
       }
     }

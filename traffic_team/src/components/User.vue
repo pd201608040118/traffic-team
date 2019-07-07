@@ -92,7 +92,7 @@
   }
 
   .el-main {
-    background: url("/static/img/p2.jpg") no-repeat;
+    background: url("/static/img/background1.jpg") no-repeat;
     height: 600px;
     width: 100%;
     text-align: center;

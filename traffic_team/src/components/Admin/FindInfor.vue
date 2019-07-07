@@ -90,7 +90,7 @@
           }
           else {   //成功
             const {$router} = this;
-            $router.push({name: "a5"})
+            $router.push({name: "findinfor"})
           }
         })
       },
