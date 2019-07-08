@@ -6,20 +6,32 @@
         mode="horizontal"
         @select="handleSelect"
         background-color="#4a4c4f"
-        text-color="#fff"
+        text-color="#FFD700"
         active-text-color="#ffd04b">
-        <el-menu-item index="1">关于联盟</el-menu-item>
+        <el-menu-item index="1">
+          <router-link :to="{name:'uintroducesys'}">关于联盟</router-link>
+        </el-menu-item>
         <el-submenu index="2">
           <template slot="title">教育研究中心</template>
-          <el-menu-item index="2-1">组织机构</el-menu-item>
-          <el-menu-item index="2-2">师资力量</el-menu-item>
+          <el-menu-item index="2-1">
+            <router-link :to="{name:'uorganizationsys'}">组织机构</router-link>
+          </el-menu-item>
+          <el-menu-item index="2-2">
+            <router-link :to="{name:'utest'}">师资力量</router-link>
+          </el-menu-item>
         </el-submenu>
         <el-submenu index="3">
           <template slot="title">专业委员会</template>
-          <el-menu-item index="3-1">入会资格</el-menu-item>
-          <el-menu-item index="3-2">评判标准</el-menu-item>
+          <el-menu-item index="3-1">
+            <router-link :to="{name:'utest'}">入会资格</router-link>
+          </el-menu-item>
+          <el-menu-item index="3-2">
+            <router-link :to="{name:'utest'}">评判标准</router-link>
+          </el-menu-item>
         </el-submenu>
-        <el-menu-item index="4">最新动态</el-menu-item>
+        <el-menu-item index="4">
+          <router-link :to="{name:'utest'}">最新动态</router-link>
+        </el-menu-item>
       </el-menu>
     </el-header>
     <el-container>
@@ -36,7 +48,7 @@
               <span slot="title">信息管理</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="1-1">
+              <el-menu-item index="1-1" style="color: #EEAEEE">
                 <router-link :to="{name:'u_pim'}">个人信息</router-link>
               </el-menu-item>
             </el-menu-item-group>
@@ -59,7 +71,7 @@
             </template>
             <el-menu-item-group>
               <el-menu-item index="3-1">
-                <router-link :to="{name:'helpyou'}">请求和帮助</router-link>
+                <router-link :to="{name:'uhelpyou'}">请求和帮助</router-link>
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
@@ -85,6 +97,19 @@
 </script>
 <style>
 
+  a {
+    color: #FFD700;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: yellow;
+  }
+
+  a:active {
+    color: red;
+  }
+
   .el-header, .el-footer {
     background-color: #B3C0D1;
     color: #333;
@@ -93,7 +118,7 @@
 
   .el-main {
     background: url("/static/img/background1.jpg") no-repeat;
-    height: 600px;
+    height: 650px;
     width: 100%;
     text-align: center;
     background-size: cover;
@@ -110,4 +135,8 @@
     width: 200px;
     min-height: 400px;
   }
+
+  /*.el-menu-vertical-demo el-menu{*/
+  /*color:black;*/
+  /*}*/
 </style>

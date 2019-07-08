@@ -2,10 +2,10 @@
   <div>
     <el-form :inline="true">
       <el-form-item>
-        <el-input v-model="p_school" placeholder="学生姓名/学校名称"></el-input>
+        <el-input v-model="p_school" placeholder="请输入:学生姓名/学校名称"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit1">单一查询</el-button>
+        <el-button type="primary" @click="onSubmit1">学生查询</el-button>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit2">显示所有</el-button>

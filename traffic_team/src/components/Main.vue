@@ -6,21 +6,32 @@
         mode="horizontal"
         @select="handleSelect"
         background-color="#4a4c4f"
-        text-color="#fff"
+        text-color="#FFD700"
         active-text-color="#ffd04b">
         <el-menu-item index="1">
-          <router-link :to="{name:'introducesys'}">关于联盟</router-link></el-menu-item>
+          <router-link :to="{name:'introducesys'}">关于联盟</router-link>
+        </el-menu-item>
         <el-submenu index="2">
           <template slot="title">教育研究中心</template>
-          <el-menu-item index="2-1"><router-link :to="{name:'organizationsys'}">组织机构</router-link></el-menu-item>
-          <el-menu-item index="2-2"><router-link :to="{name:'test'}">师资力量</router-link></el-menu-item>
+          <el-menu-item index="2-1">
+            <router-link :to="{name:'organizationsys'}">组织机构</router-link>
+          </el-menu-item>
+          <el-menu-item index="2-2">
+            <router-link :to="{name:'test'}">师资力量</router-link>
+          </el-menu-item>
         </el-submenu>
         <el-submenu index="3">
           <template slot="title">专业委员会</template>
-          <el-menu-item index="3-1"><router-link :to="{name:'test'}">入会资格</router-link></el-menu-item>
-          <el-menu-item index="3-2"><router-link :to="{name:'test'}">评判标准</router-link></el-menu-item>
+          <el-menu-item index="3-1">
+            <router-link :to="{name:'test'}">入会资格</router-link>
+          </el-menu-item>
+          <el-menu-item index="3-2">
+            <router-link :to="{name:'test'}">评判标准</router-link>
+          </el-menu-item>
         </el-submenu>
-        <el-menu-item index="4"><router-link :to="{name:'test'}">最新动态</router-link></el-menu-item>
+        <el-menu-item index="4">
+          <router-link :to="{name:'test'}">最新动态</router-link>
+        </el-menu-item>
         <el-menu-item index="5">
           <router-link :to="{name:'login'}">登录</router-link>
           <!--<router-link :to="{name:'test'}">登录</router-link>-->
@@ -36,6 +47,19 @@
 
 </script>
 <style>
+  a {
+    color: #FFD700;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: yellow;
+  }
+
+  a:active {
+    color: red;
+  }
+
   .el-header, .el-footer {
     background-color: #B3C0D1;
     color: #333;

@@ -8,7 +8,7 @@
     <el-table-column fixed="right" label="操作">
       <template slot-scope="scope">
         <el-button type="text" size="small">
-          <router-link :to="{name:'u2'}">编辑</router-link>
+          <router-link :to="{name:'u_pim'}">编辑</router-link>
         </el-button>
       </template>
     </el-table-column>

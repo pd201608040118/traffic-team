@@ -42,7 +42,6 @@
           //var list=[];
           for (var i = 0; i < data.length; i++) {
             this.tableData = response.data;
-
             //list[i]=tableData[i]['data'];
           }
         }).catch(function (error) {

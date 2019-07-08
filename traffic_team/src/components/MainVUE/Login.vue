@@ -10,7 +10,7 @@
         </el-select>
       </el-form-item>
     </el-form>-->
-    <div style="margin-bottom:50px;">
+    <div style="margin-top:70px;margin-bottom:50px;">
       账号<input type="text" v-model="stuId"/>
       <span v-if="error.name" class="err-msg">{{error.name}}</span>
     </div>
@@ -21,7 +21,6 @@
     <div style="margin-bottom:50px;">
       <label><input @click="getRadioVal" type="radio" name="type" value=1 v-model="cradio">普通用户</label>
       <label><input @click="getRadioVal" type="radio" name="type" value=2 v-model="cradio">管理员</label>
-      <!--<label><input @click="getRadioVal" type="radio" name="type" value=3 v-model="cradio">超级管理员</label>-->
     </div>
     <div>
       <button @click="login">登录</button>
@@ -35,7 +34,7 @@
             </el-select>
           </el-form-item>
           <el-form-item label="学号">
-            <el-input v-model="stuId1" placeholder="不能为空"></el-input>
+            <el-input v-model="stuId1" placeholder="无法二次修改,请核对"></el-input>
           </el-form-item>
           <el-form-item label="姓名">
             <el-input v-model="stuName1" placeholder="不能为空"></el-input>
@@ -53,10 +52,10 @@
             <el-input v-model="password1" type="password" placeholder="不能为空"></el-input>
           </el-form-item>
         </el-form>
-          <div slot="footer" class="dialog-footer">
-            <el-button @click="dialogFormVisible = false">取 消</el-button>
-            <el-button type="primary" @click="onSubmit">确 定</el-button>
-          </div>
+        <div slot="footer" class="dialog-footer">
+          <el-button @click="dialogFormVisible = false">取 消</el-button>
+          <el-button type="primary" @click="onSubmit">确 定</el-button>
+        </div>
       </el-dialog>
     </div>
   </div>
@@ -68,6 +67,7 @@
   export default {
     data() {
       return {
+        activeName:'first',
         cradio: '',
 
         stuId: '',
@@ -95,6 +95,10 @@
         console.log(x1);
       },
       login() {
+        var obj=this.stuId;
+        var infostr=JSON.stringify(obj);
+        sessionStorage.obj=infostr;
+        console.log(obj);
         if (this.cradio == 1) {
           this.$http({
             method: 'get',

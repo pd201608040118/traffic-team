@@ -9,7 +9,7 @@ import Admin from './components/Admin.vue'
 import Login from './components/MainVUE/Login.vue'
 import User from './components/User.vue'
 import U_PIM from './components/User/U_PIM.vue'
-import UFindInfor from './components/UFindInfor.vue'
+import UFindInfor from './components/User/UFindInfor.vue'
 import A_PIM from './components/Admin/A_PIM.vue'
 import AUserControll from './components/Admin/AUserControll.vue'
 import UploadInfor from './components/Admin/UploadInfor.vue'
@@ -60,9 +60,13 @@ const routes = [
       {name: 'findinfor', path: '/main/aloin/admin/findinfor', component: FindInfor},
       {name: 'deleteinfor', path: '/main/aloin/admin/deleteinfor', component: DeleteInfor},
       {name: 'deleteuser', path: '/main/aloin/admin/deleteuser', component: DeleteUser},
-      {name: 'helpyou', path: '/main/helpyou', component: HelpYou},
+      {name: 'ahelpyou', path: '/main/helpyou', component: HelpYou},
       {name: 'defeat1', path: '/main/aloin/admin/defeat1', component: Defeat1},
       {name: 'x1', path: '/main/aloin/admin/x1', component: x1},
+      {name: 'aintroducesys', path: '/main//aloin/introducesys', component: IntroduceSYS},
+      {name: 'aorganizationsys', path: '/main/aloin/organizationsys', component: OrganizationSYS},
+      {name: 'amessage', path: '/main/aloin/message', component: Message},
+      {name: 'atest', path: '/main/aloin/test', component: test},
     ]
   },
   {
@@ -71,7 +75,11 @@ const routes = [
       {name: 'u_pim', path: '/main/login/user/u_pim', component: U_PIM},
       {name: 'ufindinfor', path: '/main/login/user/ufindinfor', component: UFindInfor},
       {name: 'x2', path: '/main/login/user/x2', component: x2},
-      {name: 'helpyou', path: '/main/helpyou', component: HelpYou},
+      {name: 'uhelpyou', path: '/main/helpyou', component: HelpYou},
+      {name: 'uintroducesys', path: '/main/login/introducesys', component: IntroduceSYS},
+      {name: 'uorganizationsys', path: '/main/login/organizationsys', component: OrganizationSYS},
+      {name: 'umessage', path: '/main/login/message', component: Message},
+      {name: 'utest', path: '/main/login/test', component: test},
     ]
   },
 

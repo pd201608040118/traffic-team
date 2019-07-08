@@ -58,7 +58,7 @@
   }
 
   .d1 {
-    color: #0000FF;
+    color: #F0FFFF;
     text-indent: 4em;
     text-size:15px;
     /*font-color:#475669;*/
