@@ -27,7 +27,7 @@
       showactivity: function () {
         var infostr = sessionStorage.obj;
         this.obj = JSON.parse(infostr);
-        console.log(this.obj);
+        console.log(this.obj);;
         this.$http({
           method: 'get',
           url: 'http://localhost:9527/traffic/student/takedpart?obj=' + this.obj,
