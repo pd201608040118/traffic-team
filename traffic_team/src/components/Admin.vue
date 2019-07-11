@@ -30,7 +30,10 @@
           </el-menu-item>
         </el-submenu>
         <el-menu-item index="4">
-          <router-link :to="{name:'atest'}">最新动态</router-link>
+          <router-link :to="{name:'amessage'}">公告</router-link>
+        </el-menu-item>
+        <el-menu-item index="5">
+          <router-link :to="{name:'amactivity'}">活动</router-link>
         </el-menu-item>
       </el-menu>
     </el-header>
@@ -40,11 +43,11 @@
           <el-radio-button :label="false">展开</el-radio-button>
           <el-radio-button :label="true">收起</el-radio-button>
         </el-radio-group>
-        <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
+        <el-menu default-active="1-6-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
                  :collapse="isCollapse">
           <el-submenu index="1">
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i class="el-icon-s-custom"></i>
               <span slot="title">信息管理</span>
             </template>
             <el-menu-item-group>
@@ -80,11 +83,36 @@
           </el-submenu>
           <el-submenu index="4">
             <template slot="title">
+              <i class="el-icon-reading"></i>
+              <span slot="title">活动</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="4-1">
+                <router-link :to="{name:'uploadactivity'}">活动添加</router-link>
+              </el-menu-item>
+              <el-menu-item index="4-2">
+                <router-link :to="{name:'aactivity'}">活动管理</router-link>
+              </el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="5">
+            <template slot="title">
+              <i class="el-icon-message-solid"></i>
+              <span slot="title">私信</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="5-1">
+                <router-link :to="{name:'asmsessage'}">私信</router-link>
+              </el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="6">
+            <template slot="title">
               <i class="el-icon-setting"></i>
               <span slot="title">设置</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="4-1">
+              <el-menu-item index="6-1">
                 <router-link :to="{name:'ahelpyou'}">请求和帮助</router-link>
               </el-menu-item>
             </el-menu-item-group>

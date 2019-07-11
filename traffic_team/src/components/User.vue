@@ -30,7 +30,10 @@
           </el-menu-item>
         </el-submenu>
         <el-menu-item index="4">
-          <router-link :to="{name:'utest'}">最新动态</router-link>
+          <router-link :to="{name:'umessage'}">公告</router-link>
+        </el-menu-item>
+        <el-menu-item index="5">
+          <router-link :to="{name:'umactivity'}">活动</router-link>
         </el-menu-item>
       </el-menu>
     </el-header>
@@ -40,11 +43,11 @@
           <el-radio-button :label="false">展开</el-radio-button>
           <el-radio-button :label="true">收起</el-radio-button>
         </el-radio-group>
-        <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
+        <el-menu default-active="1-5-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
                  :collapse="isCollapse">
           <el-submenu index="1">
             <template slot="title">
-              <i class="el-icon-menu"></i>
+              <i class="el-icon-s-custom"></i>
               <span slot="title">信息管理</span>
             </template>
             <el-menu-item-group>
@@ -66,11 +69,36 @@
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">
+              <i class="el-icon-mouse"></i>
+              <span slot="title">我要报名</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="3-1">
+                <router-link :to="{name:'takepart'}">我要报名</router-link>
+              </el-menu-item>
+              <el-menu-item index="3-2">
+                <router-link :to="{name:'takedpart'}">报名详情</router-link>
+              </el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="4">
+            <template slot="title">
+              <i class="el-icon-message-solid"></i>
+              <span slot="title">私信</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="4-1">
+                <router-link :to="{name:'smessage'}">私信</router-link>
+              </el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="5">
+            <template slot="title">
               <i class="el-icon-setting"></i>
               <span slot="title">设置</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="3-1">
+              <el-menu-item index="5-1">
                 <router-link :to="{name:'uhelpyou'}">请求和帮助</router-link>
               </el-menu-item>
             </el-menu-item-group>

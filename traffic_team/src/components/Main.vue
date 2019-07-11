@@ -30,11 +30,13 @@
           </el-menu-item>
         </el-submenu>
         <el-menu-item index="4">
-          <router-link :to="{name:'test'}">最新动态</router-link>
+          <router-link :to="{name:'message'}">公告</router-link>
         </el-menu-item>
         <el-menu-item index="5">
+          <router-link :to="{name:'mactivity'}">活动</router-link>
+        </el-menu-item>
+        <el-menu-item index="6">
           <router-link :to="{name:'login'}">登录</router-link>
-          <!--<router-link :to="{name:'test'}">登录</router-link>-->
         </el-menu-item>
       </el-menu>
     </el-header>

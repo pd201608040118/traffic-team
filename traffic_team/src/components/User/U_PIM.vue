@@ -7,7 +7,7 @@
     <el-table-column prop="school" label="院校"></el-table-column>
     <el-table-column fixed="right" label="操作">
       <template slot-scope="scope">
-        <el-button type="text" size="small" @click="dialogFormVisible = true">编辑</el-button>
+        <el-button type="text" size="small" icon="el-icon-edit" @click="dialogFormVisible = true">编辑</el-button>
         <el-dialog title="编辑个人信息" :visible.sync="dialogFormVisible" :modal-append-to-body='false'>
           <el-form label-width="80px">
             <el-form-item label="旧密码">

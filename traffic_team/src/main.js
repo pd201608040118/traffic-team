@@ -3,23 +3,28 @@
 import Vue from 'vue'
 import Main from './components/Main.vue'
 import IntroduceSYS from './components/MainVUE/IntroduceSYS.vue'
+import mactivity from './components/MainVUE/mactivity.vue'
 import OrganizationSYS from './components/MainVUE/OrganizationSYS.vue'
 import Message from './components/MainVUE/Message.vue'
 import Admin from './components/Admin.vue'
 import Login from './components/MainVUE/Login.vue'
 import User from './components/User.vue'
 import U_PIM from './components/User/U_PIM.vue'
+import SMessage from './components/User/SMessage.vue'
 import UFindInfor from './components/User/UFindInfor.vue'
+import TakePart from './components/User/TakePart.vue'
+import TakedPart from './components/User/TakedPart.vue'
 import A_PIM from './components/Admin/A_PIM.vue'
 import AUserControll from './components/Admin/AUserControll.vue'
+import AMessage from './components/Admin/AMessage.vue'
+import AActivity from './components/Admin/AActivity.vue'
+import UploadActivity from './components/Admin/UploadActivity.vue'
 import UploadInfor from './components/Admin/UploadInfor.vue'
 import FindInfor from './components/Admin/FindInfor.vue'
 import HelpYou from './components/HelpYou.vue'
 import DeleteInfor from './components/Admin/DeleteInfor.vue'
 import DeleteUser from './components/Admin/DeleteUser.vue'
 import test from './components/MainVUE/test.vue'
-import x1 from './components/x1.vue'
-import x2 from './components/x2.vue'
 import Defeat1 from './components/Defeat1.vue'
 import VueRouter from "vue-router";
 import VueReource from "vue-resource";
@@ -49,6 +54,7 @@ const routes = [
       {name: 'organizationsys', path: '/main/organizationsys', component: OrganizationSYS},
       {name: 'message', path: '/main/message', component: Message},
       {name: 'test', path: '/main/test', component: test},
+      {name: 'mactivity', path: '/main/mactivity', component: mactivity},
     ]
   },
   {
@@ -61,12 +67,16 @@ const routes = [
       {name: 'deleteinfor', path: '/main/aloin/admin/deleteinfor', component: DeleteInfor},
       {name: 'deleteuser', path: '/main/aloin/admin/deleteuser', component: DeleteUser},
       {name: 'ahelpyou', path: '/main/helpyou', component: HelpYou},
-      {name: 'defeat1', path: '/main/aloin/admin/defeat1', component: Defeat1},
-      {name: 'x1', path: '/main/aloin/admin/x1', component: x1},
       {name: 'aintroducesys', path: '/main//aloin/introducesys', component: IntroduceSYS},
       {name: 'aorganizationsys', path: '/main/aloin/organizationsys', component: OrganizationSYS},
       {name: 'amessage', path: '/main/aloin/message', component: Message},
       {name: 'atest', path: '/main/aloin/test', component: test},
+      {name: 'amactivity', path: '/main/alogin/admin/mactivity', component: mactivity},
+      {name: 'asmsessage', path: '/main/aloin/admin/amsessage', component: AMessage},
+      {name: 'uploadactivity', path: '/main/aloin/admin/uploadactivity', component: UploadActivity},
+      {name: 'ammessage', path: '/main/ammessage', component: Message},
+      {name: 'defeat1', path: '/main/alogin/admin/defeat1', component: Defeat1},
+      {name: 'aactivity', path: '/main/aactivity', component: AActivity},
     ]
   },
   {
@@ -74,12 +84,17 @@ const routes = [
     children: [
       {name: 'u_pim', path: '/main/login/user/u_pim', component: U_PIM},
       {name: 'ufindinfor', path: '/main/login/user/ufindinfor', component: UFindInfor},
-      {name: 'x2', path: '/main/login/user/x2', component: x2},
       {name: 'uhelpyou', path: '/main/helpyou', component: HelpYou},
       {name: 'uintroducesys', path: '/main/login/introducesys', component: IntroduceSYS},
       {name: 'uorganizationsys', path: '/main/login/organizationsys', component: OrganizationSYS},
-      {name: 'umessage', path: '/main/login/message', component: Message},
+      {name: 'umessage', path: '/main/login/user/message', component: Message},
       {name: 'utest', path: '/main/login/test', component: test},
+      {name: 'umactivity', path: '/main/login/user/umactivity', component: mactivity},
+      {name: 'smessage', path: '/main/login/user/smessage', component: SMessage},
+      {name: 'takepart', path: '/main/login/user/takepart', component: TakePart},
+      {name: 'takedpart', path: '/main/login/user/takedpart', component: TakedPart},
+      {name: 'ummessage', path: '/main/ummessage', component: Message},
+      {name: 'defeat1', path: '/main/login/user/defeat1', component: Defeat1},
     ]
   },
 
